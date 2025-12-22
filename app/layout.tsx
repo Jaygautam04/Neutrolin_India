@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Neutrolin India - Premium Pesticides & Fertilizers for Indian Farmers",
   description:
     "Leading provider of high-quality pesticides and fertilizers for Indian agriculture. Trusted by farmers across India for crop protection and enhanced yields. Contact: Abhay Kumar, Chitsona, Bulandshahr.",
-  generator: "v0.app",
+ 
   keywords:
     "pesticides, fertilizers, agriculture, farming, crop protection, India, insecticides, fungicides, herbicides, organic farming, neutrolin",
   icons: {
