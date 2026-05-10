@@ -6,7 +6,6 @@ import { ProductCard } from "@/components/product-card";
 import { products, categories, getProductsByCategory } from "@/lib/products";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { notFound } from "next/navigation";
 
 interface CategoryPageProps {
   params: {
@@ -18,8 +17,32 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   const categoryData = categories.find((c) => c.id === params.category);
   const categoryProducts = getProductsByCategory(params.category);
 
-  if (!categoryData || categoryProducts.length === 0) {
-    notFound();
+  // If category doesn't exist, show all products
+  if (!categoryData) {
+    return (
+      <main className="min-h-screen">
+        <Header />
+        <div className="bg-muted dark:bg-slate-900 pt-24 pb-6">
+          <div className="container mx-auto px-4">
+            <Link href="/products" className="text-primary hover:underline">
+              ← Back to All Products
+            </Link>
+          </div>
+        </div>
+        <section className="py-16 md:py-24 bg-white dark:bg-slate-950">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl font-bold text-primary dark:text-white mb-4">Category Not Found</h1>
+            <p className="text-muted-foreground dark:text-slate-300 mb-8">
+              The category you're looking for doesn't exist. Please browse all products instead.
+            </p>
+            <Link href="/products" className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors">
+              View All Products
+            </Link>
+          </div>
+        </section>
+        <Footer />
+      </main>
+    );
   }
 
   const categoryDescriptions: Record<string, string> = {

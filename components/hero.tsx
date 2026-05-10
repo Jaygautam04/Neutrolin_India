@@ -7,11 +7,12 @@ import { ArrowRight, Leaf, Award, Zap } from "lucide-react"
 export function Hero() {
   return (
     <section className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-white to-muted dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
-      {/* Animated background gradients */}
+      {/* Premium gradient background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/8 via-transparent to-accent/5" />
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-0 -left-32 w-96 h-96 bg-primary/12 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 -right-32 w-96 h-96 bg-accent/8 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-transparent via-white/5 to-transparent dark:via-slate-900/5" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -25,15 +26,22 @@ export function Hero() {
           </div>
 
           {/* Main Heading */}
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance">
-              <span className="gradient-green bg-clip-text text-transparent">Premium Agro-Chemicals</span>
-              <br />
-              <span className="text-foreground dark:text-white">For Modern Farming</span>
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-balance leading-tight">
+              <span className="block text-primary dark:text-white">Superior Quality</span>
+              <span className="block gradient-green bg-clip-text text-transparent">Agro-Chemical Solutions</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Leading Manufacturer of Pesticides, Herbicides, Fungicides, Plant Growth Promoters and Bio-Organic Products
+            <p className="text-lg md:text-xl text-muted-foreground dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Nutrolin India manufactures premium pesticides, fungicides, herbicides, and bio-fertilizers trusted by thousands of Indian farmers. Complete crop protection with proven efficacy.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-sm font-semibold text-primary dark:text-accent">
+                ✓ 41+ Premium Products
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary dark:text-white">
+                ✓ 6 Product Categories
+              </span>
+            </div>
           </div>
 
           {/* CTA Buttons */}
@@ -58,19 +66,28 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-3 gap-4 pt-12 md:gap-8">
-            <div className="glass rounded-lg p-4 md:p-6 space-y-2 animate-slideInDown">
-              <p className="text-3xl md:text-4xl font-bold text-primary dark:text-accent">41+</p>
-              <p className="text-sm md:text-base text-muted-foreground dark:text-slate-400">Premium Products</p>
+          {/* Premium Stats Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 md:gap-8 max-w-3xl mx-auto">
+            <div className="glass rounded-xl p-6 md:p-8 space-y-3 animate-slideInDown hover:shadow-lg transition-shadow duration-300 border border-primary/10">
+              <div className="text-4xl md:text-5xl font-black text-primary dark:text-accent">41+</div>
+              <div className="space-y-1">
+                <p className="text-sm font-semibold text-primary dark:text-white">Premium Products</p>
+                <p className="text-xs text-muted-foreground dark:text-slate-400">Across all categories</p>
+              </div>
             </div>
-            <div className="glass rounded-lg p-4 md:p-6 space-y-2 animate-slideInDown" style={{ animationDelay: "0.1s" }}>
-              <p className="text-3xl md:text-4xl font-bold text-primary dark:text-accent">6</p>
-              <p className="text-sm md:text-base text-muted-foreground dark:text-slate-400">Categories</p>
+            <div className="glass rounded-xl p-6 md:p-8 space-y-3 animate-slideInDown hover:shadow-lg transition-shadow duration-300 border border-primary/10" style={{ animationDelay: "0.1s" }}>
+              <div className="text-4xl md:text-5xl font-black text-primary dark:text-accent">6</div>
+              <div className="space-y-1">
+                <p className="text-sm font-semibold text-primary dark:text-white">Categories</p>
+                <p className="text-xs text-muted-foreground dark:text-slate-400">Complete crop protection</p>
+              </div>
             </div>
-            <div className="glass rounded-lg p-4 md:p-6 space-y-2 animate-slideInDown" style={{ animationDelay: "0.2s" }}>
-              <p className="text-3xl md:text-4xl font-bold text-primary dark:text-accent">100%</p>
-              <p className="text-sm md:text-base text-muted-foreground dark:text-slate-400">Quality Assured</p>
+            <div className="glass rounded-xl p-6 md:p-8 space-y-3 animate-slideInDown hover:shadow-lg transition-shadow duration-300 border border-primary/10" style={{ animationDelay: "0.2s" }}>
+              <div className="text-4xl md:text-5xl font-black text-primary dark:text-accent">ISO</div>
+              <div className="space-y-1">
+                <p className="text-sm font-semibold text-primary dark:text-white">9001:2015</p>
+                <p className="text-xs text-muted-foreground dark:text-slate-400">Certified quality</p>
+              </div>
             </div>
           </div>
         </div>

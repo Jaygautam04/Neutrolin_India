@@ -40,37 +40,49 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors relative group">
+          <nav className="hidden md:flex items-center gap-1">
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors relative group px-3 py-2">
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
-            <Link href="/products" className="text-sm font-medium hover:text-primary transition-colors relative group">
+            <Link href="/products" className="text-sm font-medium hover:text-primary transition-colors relative group px-3 py-2">
               All Products
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
-            <Link
-              href="/products/insecticides"
-              className="text-sm font-medium hover:text-primary transition-colors relative group"
-            >
-              Insecticides
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-            </Link>
-            <Link
-              href="/products/fungicides"
-              className="text-sm font-medium hover:text-primary transition-colors relative group"
-            >
-              Fungicides
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-            </Link>
-            <Link
-              href="/products/fertilizers"
-              className="text-sm font-medium hover:text-primary transition-colors relative group"
-            >
-              Fertilizers
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-            </Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors relative group">
+            
+            {/* Categories Dropdown */}
+            <div className="relative group">
+              <button className="text-sm font-medium hover:text-primary transition-colors relative px-3 py-2 flex items-center gap-1">
+                Categories
+                <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute left-0 top-full mt-0 w-48 bg-card rounded-lg shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40">
+                <Link href="/products/insecticides" className="block px-4 py-2 text-sm hover:bg-primary/10 rounded-md transition-colors">
+                  Insecticides (17)
+                </Link>
+                <Link href="/products/fungicides" className="block px-4 py-2 text-sm hover:bg-primary/10 rounded-md transition-colors">
+                  Fungicides (6)
+                </Link>
+                <Link href="/products/herbicides" className="block px-4 py-2 text-sm hover:bg-primary/10 rounded-md transition-colors">
+                  Herbicides (3)
+                </Link>
+                <Link href="/products/pgr" className="block px-4 py-2 text-sm hover:bg-primary/10 rounded-md transition-colors">
+                  Plant Growth Regulators (4)
+                </Link>
+                <Link href="/products/bio-fertilizers" className="block px-4 py-2 text-sm hover:bg-primary/10 rounded-md transition-colors">
+                  Bio-Fertilizers (2)
+                </Link>
+                <Link href="/products/fertilizers" className="block px-4 py-2 text-sm hover:bg-primary/10 rounded-md transition-colors">
+                  Fertilizers (9)
+                </Link>
+              </div>
+            </div>
+            
+            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors relative group px-3 py-2">
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
@@ -103,27 +115,43 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-in slide-in-from-top duration-300">
-            <nav className="flex flex-col gap-4">
-              <Link href="/" className="text-sm font-medium hover:text-primary transition-colors py-2">
+          <div className="md:hidden py-4 animate-in slide-in-from-top duration-300 border-t border-border/50">
+            <nav className="flex flex-col gap-2">
+              <Link href="/" className="text-sm font-medium hover:text-primary transition-colors py-2 px-2 rounded hover:bg-primary/5">
                 Home
               </Link>
-              <Link href="/products" className="text-sm font-medium hover:text-primary transition-colors py-2">
+              <Link href="/products" className="text-sm font-medium hover:text-primary transition-colors py-2 px-2 rounded hover:bg-primary/5">
                 All Products
               </Link>
-              <Link href="/products/insecticides" className="text-sm font-medium hover:text-primary transition-colors py-2">
-                Insecticides
-              </Link>
-              <Link href="/products/fungicides" className="text-sm font-medium hover:text-primary transition-colors py-2">
-                Fungicides
-              </Link>
-              <Link href="/products/fertilizers" className="text-sm font-medium hover:text-primary transition-colors py-2">
-                Fertilizers
-              </Link>
-              <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors py-2">
+              
+              {/* Categories Section */}
+              <div className="py-2 px-2 border-t border-border/30 mt-2">
+                <p className="text-xs font-semibold text-muted-foreground uppercase py-2">Categories</p>
+                <Link href="/products/insecticides" className="text-sm hover:text-primary transition-colors py-2 px-2 block rounded hover:bg-primary/5">
+                  Insecticides (17)
+                </Link>
+                <Link href="/products/fungicides" className="text-sm hover:text-primary transition-colors py-2 px-2 block rounded hover:bg-primary/5">
+                  Fungicides (6)
+                </Link>
+                <Link href="/products/herbicides" className="text-sm hover:text-primary transition-colors py-2 px-2 block rounded hover:bg-primary/5">
+                  Herbicides (3)
+                </Link>
+                <Link href="/products/pgr" className="text-sm hover:text-primary transition-colors py-2 px-2 block rounded hover:bg-primary/5">
+                  Plant Growth Regulators (4)
+                </Link>
+                <Link href="/products/bio-fertilizers" className="text-sm hover:text-primary transition-colors py-2 px-2 block rounded hover:bg-primary/5">
+                  Bio-Fertilizers (2)
+                </Link>
+                <Link href="/products/fertilizers" className="text-sm hover:text-primary transition-colors py-2 px-2 block rounded hover:bg-primary/5">
+                  Fertilizers (9)
+                </Link>
+              </div>
+              
+              <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors py-2 px-2 rounded hover:bg-primary/5 border-t border-border/30 mt-2">
                 Contact
               </Link>
-              <div className="flex gap-2 pt-4">
+              
+              <div className="flex gap-2 pt-4 border-t border-border/30 mt-2">
                 <Button className="flex-1 gap-2" asChild>
                   <Link href="/contact">
                     <Phone className="h-4 w-4" />
