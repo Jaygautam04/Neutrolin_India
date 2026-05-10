@@ -16,12 +16,17 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Neutrolin India - Premium Pesticides & Fertilizers for Indian Farmers",
+  title: "Nutrolin India | Premium Pesticides, Fungicides & Bio-Fertilizers",
   description:
-    "Leading provider of high-quality pesticides and fertilizers for Indian agriculture. Trusted by farmers across India for crop protection and enhanced yields. Contact: Abhay Kumar, Chitsona, Bulandshahr.",
- 
+    "Nutrolin India - Leading manufacturer of pesticides, herbicides, fungicides, plant growth promoters and bio-organic products. ISO 9001:2015 Certified. Premium quality agrochemicals for Indian farmers.",
   keywords:
-    "pesticides, fertilizers, agriculture, farming, crop protection, India, insecticides, fungicides, herbicides, organic farming, neutrolin",
+    "pesticides, fungicides, herbicides, fertilizers, plant growth regulators, bio-fertilizers, agriculture, Indian farmers, crop protection, insecticides, Nutrolin",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   icons: {
     icon: [
       {
@@ -47,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable}`}>
-      <body className={`font-sans antialiased`}>
+    <html lang="en" className={`bg-background ${poppins.variable}`}>
+      <body className={`font-sans antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
         <FloatingActions />

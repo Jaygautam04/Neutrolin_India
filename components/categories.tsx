@@ -1,90 +1,92 @@
 "use client"
 
 import Link from "next/link"
-import { Card } from "@/components/ui/card"
-import { Bug, Leaf, Droplets, Flower2, ArrowRight } from "lucide-react"
+import { Bug, Leaf, Droplets, Flower2, ArrowRight, Sprout, Beaker } from "lucide-react"
 
 const categories = [
   {
     icon: Bug,
     title: "Insecticides",
     description: "Protect crops from harmful insects and pests",
-    count: "120+ Products",
-    color: "bg-red-500/10 text-red-600 dark:text-red-400",
-    image: "/insecticide-spray-bottle-protecting-crops-from-ins.jpg",
-    href: "/insecticides",
+    count: "17 Products",
+    color: "bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300",
+    href: "/products/insecticides",
+  },
+  {
+    icon: Droplets,
+    title: "Fungicides",
+    description: "Combat fungal diseases and crop infections",
+    count: "6 Products",
+    color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300",
+    href: "/products/fungicides",
   },
   {
     icon: Leaf,
     title: "Herbicides",
     description: "Effective weed control solutions",
-    count: "85+ Products",
-    color: "bg-green-500/10 text-green-600 dark:text-green-400",
-    image: "/herbicide-bottle-green-agricultural-field-weed-con.jpg",
-    href: "/herbicides",
+    count: "3 Products",
+    color: "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300",
+    href: "/products/herbicides",
   },
   {
-    icon: Droplets,
-    title: "Fungicides",
-    description: "Combat fungal diseases and molds",
-    count: "95+ Products",
-    color: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
-    image: "/fungicide-powder-protecting-plants-from-disease.jpg",
-    href: "/fungicides",
+    icon: Sprout,
+    title: "Plant Growth Regulators",
+    description: "Enhance flowering, fruiting and yield",
+    count: "4 Products",
+    color: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900 dark:text-emerald-300",
+    href: "/products/pgr",
+  },
+  {
+    icon: Beaker,
+    title: "Bio-Fertilizers",
+    description: "Sustainable biological nutrient solutions",
+    count: "2 Products",
+    color: "bg-cyan-100 text-cyan-600 dark:bg-cyan-900 dark:text-cyan-300",
+    href: "/products/bio-fertilizers",
   },
   {
     icon: Flower2,
-    title: "Fertilizers",
-    description: "Nutrient-rich formulas for optimal growth",
-    count: "200+ Products",
-    color: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
-    image: "/fertilizer-bag-with-healthy-growing-crops.jpg",
-    href: "/fertilizers",
+    title: "Fertilizers & Micronutrients",
+    description: "Complete nutrition for optimal growth",
+    count: "9 Products",
+    color: "bg-amber-100 text-amber-600 dark:bg-amber-900 dark:text-amber-300",
+    href: "/products/fertilizers",
   },
 ]
 
 export function Categories() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-white dark:bg-slate-950">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Browse by Category</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive agricultural solutions for every farming need
+        <div className="text-center mb-16 animate-fadeInUp">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary dark:text-white">Product Categories</h2>
+          <p className="text-lg text-muted-foreground dark:text-slate-300 max-w-2xl mx-auto">
+            Choose from our 6 premium product categories designed for every agricultural need
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category, index) => {
             const Icon = category.icon
             return (
               <Link key={index} href={category.href}>
-                <Card className="group relative overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer h-full">
-                  {/* Background Image */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                    <img
-                      src={category.image || "/placeholder.svg"}
-                      alt={category.title}
-                      className="w-full h-full object-cover"
-                    />
+                <div className="glass rounded-lg p-6 group cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 h-full animate-fadeInUp" style={{ animationDelay: `${index * 0.05}s` }}>
+                  <div
+                    className={`w-14 h-14 rounded-lg ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <Icon className="h-7 w-7" />
                   </div>
-
-                  <div className="relative p-6">
-                    <div
-                      className={`w-16 h-16 rounded-2xl ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <Icon className="h-8 w-8" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                      {category.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{category.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-primary">{category.count}</span>
-                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-2 transition-all" />
-                    </div>
+                  <h3 className="text-lg font-bold text-primary dark:text-white mb-2 group-hover:text-secondary transition-colors line-clamp-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground dark:text-slate-400 mb-4 leading-relaxed">
+                    {category.description}
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-border dark:border-slate-700">
+                    <span className="text-sm font-semibold text-primary dark:text-accent">{category.count}</span>
+                    <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary dark:group-hover:text-accent group-hover:translate-x-1 transition-all" />
                   </div>
-                </Card>
+                </div>
               </Link>
             )
           })}

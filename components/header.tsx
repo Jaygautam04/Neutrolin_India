@@ -46,25 +46,28 @@ export function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
             <Link href="/products" className="text-sm font-medium hover:text-primary transition-colors relative group">
-              Products
+              All Products
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
             <Link
-              href="/pesticides"
+              href="/products/insecticides"
               className="text-sm font-medium hover:text-primary transition-colors relative group"
             >
-              Pesticides
+              Insecticides
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
             <Link
-              href="/fertilizers"
+              href="/products/fungicides"
+              className="text-sm font-medium hover:text-primary transition-colors relative group"
+            >
+              Fungicides
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+            </Link>
+            <Link
+              href="/products/fertilizers"
               className="text-sm font-medium hover:text-primary transition-colors relative group"
             >
               Fertilizers
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-            </Link>
-            <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors relative group">
-              About Us
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
             <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors relative group">
@@ -106,16 +109,16 @@ export function Header() {
                 Home
               </Link>
               <Link href="/products" className="text-sm font-medium hover:text-primary transition-colors py-2">
-                Products
+                All Products
               </Link>
-              <Link href="/pesticides" className="text-sm font-medium hover:text-primary transition-colors py-2">
-                Pesticides
+              <Link href="/products/insecticides" className="text-sm font-medium hover:text-primary transition-colors py-2">
+                Insecticides
               </Link>
-              <Link href="/fertilizers" className="text-sm font-medium hover:text-primary transition-colors py-2">
+              <Link href="/products/fungicides" className="text-sm font-medium hover:text-primary transition-colors py-2">
+                Fungicides
+              </Link>
+              <Link href="/products/fertilizers" className="text-sm font-medium hover:text-primary transition-colors py-2">
                 Fertilizers
-              </Link>
-              <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors py-2">
-                About Us
               </Link>
               <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors py-2">
                 Contact
