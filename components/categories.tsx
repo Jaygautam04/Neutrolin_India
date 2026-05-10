@@ -56,35 +56,39 @@ const categories = [
 
 export function Categories() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-950">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-muted/30 to-white dark:from-slate-900/30 dark:to-slate-950">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fadeInUp">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary dark:text-white">Product Categories</h2>
-          <p className="text-lg text-muted-foreground dark:text-slate-300 max-w-2xl mx-auto">
-            Choose from our 6 premium product categories designed for every agricultural need
+        <div className="text-center mb-20 animate-fadeInUp">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-primary dark:text-white text-balance">
+            Complete Product Range
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Explore our 6 premium product categories with 41 specialized solutions designed for comprehensive crop protection and nutrition
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {categories.map((category, index) => {
             const Icon = category.icon
             return (
               <Link key={index} href={category.href}>
-                <div className="glass rounded-lg p-6 group cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 h-full animate-fadeInUp" style={{ animationDelay: `${index * 0.05}s` }}>
-                  <div
-                    className={`w-14 h-14 rounded-lg ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <h3 className="text-lg font-bold text-primary dark:text-white mb-2 group-hover:text-secondary transition-colors line-clamp-2">
-                    {category.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground dark:text-slate-400 mb-4 leading-relaxed">
-                    {category.description}
-                  </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-border dark:border-slate-700">
-                    <span className="text-sm font-semibold text-primary dark:text-accent">{category.count}</span>
-                    <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary dark:group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                <div className="glass rounded-xl p-8 group cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full animate-fadeInUp border border-primary/10 hover:border-primary/30" style={{ animationDelay: `${index * 0.05}s` }}>
+                  <div className="space-y-4">
+                    <div
+                      className={`w-16 h-16 rounded-xl ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md`}
+                    >
+                      <Icon className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-xl font-black text-primary dark:text-white mb-2 group-hover:text-secondary transition-colors line-clamp-2">
+                      {category.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground dark:text-slate-400 mb-6 leading-relaxed">
+                      {category.description}
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-primary/10 dark:border-primary/20">
+                      <span className="text-xs font-bold text-primary dark:text-accent uppercase tracking-wide">{category.count}</span>
+                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary dark:group-hover:text-accent group-hover:translate-x-2 transition-all duration-300" />
+                    </div>
                   </div>
                 </div>
               </Link>
