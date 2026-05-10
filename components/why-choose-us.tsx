@@ -38,29 +38,30 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 bg-primary/5">
+    <section className="py-20 bg-muted/50 dark:bg-slate-900">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Why Choose Neutrolin India?</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Your trusted partner in modern agriculture with comprehensive solutions
+        <div className="text-center mb-16 animate-fadeInUp">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary dark:text-white">Why Choose Nutrolin India?</h2>
+          <p className="text-lg text-muted-foreground dark:text-slate-300 max-w-2xl mx-auto">
+            Leading manufacturer of premium agro-chemicals trusted by thousands of farmers across India
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
-              <Card
+              <div
                 key={index}
-                className="group p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary cursor-pointer"
+                className="glass rounded-lg p-8 group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-fadeInUp cursor-pointer"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <Icon className="h-8 w-8" />
+                <div className="w-14 h-14 rounded-lg bg-primary/15 text-primary dark:bg-secondary/20 dark:text-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-              </Card>
+                <h3 className="text-lg font-bold mb-3 text-primary dark:text-white group-hover:text-secondary transition-colors">{feature.title}</h3>
+                <p className="text-muted-foreground dark:text-slate-400 leading-relaxed">{feature.description}</p>
+              </div>
             )
           })}
         </div>
